@@ -1,0 +1,33 @@
+<form [formGroup]="employmentDetailsForm" class="form-container">
+    <div class="row">
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Occupation</mat-label>
+                <input formcontrolname="occupation" matInput placeholder="Occuption">
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Monthly Income</mat-label>
+                <input formcontrolname="monthlyIncome" matInput placeholder="Monthly Income">
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Monthly Expenses</mat-label>
+                <input formcontrolname="monthlyExpenses" matInput placeholder="Monthly Expenses">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <!--
+    <div class="row" style="margin-top:20px">
+        <div class="offset-md-4 col-sm-1">
+            <button (click)="back()" mat-raised-button color="primary">Back</button>
+        </div>
+        <div class="offset-md-1 col-sm-1">
+            <button (click)="onSubmit()" mat-raised-button color="primary">Next</button>
+        </div>
+    </div>
+    -->
+</form>

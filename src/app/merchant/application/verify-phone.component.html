@@ -1,0 +1,34 @@
+<h6>Verify Phone</h6>
+<mat-divider></mat-divider>
+<form [formGroup]="verifyPhoneForm" class="form-container" autocomplete="off">
+    <div class="row">
+        <div class="col-md-2">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Enter Customer Phone #</mat-label>
+                <input formControlName="phoneNumber" matInput placeholder="Phone Number">
+                <mat-hint align="end">Mandaotry 10 digit phone number</mat-hint>
+                <mat-error *ngIf="hasError('phoneNumber', 'required')">Phone number is required</mat-error>
+                <mat-error *ngIf="hasError('phoneNumber', 'pattern')">Should be 10 digit number</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-1 offset-md-1">
+            <button (click)="sendOtp()" mat-raised-button color="primary" [disabled]="!verifyPhoneForm.get('phoneNumber').valid" >Send OTP</button>
+        </div>
+    </div>
+    <div class="row" *ngIf="otpSent">
+        <div class="col-md-2">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Enter OTP #</mat-label>
+                <input formControlName="otp" matInput placeholder="OTP">
+            </mat-form-field>
+        </div>
+        <div class="col-sm-1 offset-md-1">
+            <button (click)="verifyOtp()" mat-raised-button color="primary">Verify</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 offset-md-1">
+            <button (click)="next()" [disabled]="!otpVerified" mat-raised-button color="primary">Next</button>
+        </div>
+    </div>
+</form>

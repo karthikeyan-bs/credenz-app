@@ -1,0 +1,53 @@
+<div class="container" fxLayout="row">
+    <!--
+    <mat-card class="booking-card">
+        <mat-card-header>
+            <mat-card-title>New Application</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+    -->        
+            <div class="operation-detail container" fxLayout="row" fxLayoutAlign="center none">
+                <div>
+
+                    <mat-stepper linear #stepper>
+
+                        <mat-step   [stepControl]="personalDetailsStep">
+
+                            <ng-template matStepLabel>Personal Details</ng-template>
+                            <personal-details [customer]="customer"></personal-details>
+                            <div>
+                                <button mat-flat-button color="primary" matStepperNext>Next</button>
+                            </div>
+                        </mat-step>
+
+                        <mat-step [stepControl]="identificationDetailsStep">
+
+                            <ng-template matStepLabel>Identification Details</ng-template>
+                            <identification-details [customer]="customer"></identification-details>
+                            <div>
+                                <button mat-flat-button color="primary" matStepperPrevious>Back</button>&nbsp;&nbsp;
+                                <button mat-flat-button color="primary" matStepperNext>Next</button>
+                            </div>
+
+                        </mat-step>
+
+                        <mat-step [stepControl]="employmentDetailsStep">
+
+                            <ng-template matStepLabel>Employment Details</ng-template>
+                            <employment-details [customer]="customer"></employment-details>
+                            <div>
+                                <button mat-flat-button color="primary" matStepperPrevious>Back</button>&nbsp;&nbsp;
+                                <button mat-flat-button color="primary" matStepperNext>Next</button>
+                            </div>
+
+                        </mat-step>
+
+                    </mat-stepper>
+
+                </div>
+            </div>
+    <!--        
+        </mat-card-content>
+    </mat-card>
+    -->
+</div>

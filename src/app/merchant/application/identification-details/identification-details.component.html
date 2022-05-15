@@ -1,0 +1,68 @@
+<form [formGroup]="identificationDetailsForm" class="form-container" autocomplete="off">
+    <div class="row">
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Aadhaar Number</mat-label>
+                <input formControlName="aadhaarNumber" matInput placeholder="Aadhaar Number">
+            </mat-form-field>
+            <mat-error *ngIf="hasError('aadhaarNumber', 'required')">Aadhaar is required</mat-error>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>PAN</mat-label>
+                <input formControlName="panNumber" matInput placeholder="PAN">
+            </mat-form-field>
+            <mat-error *ngIf="hasError('panNumber', 'required')">PAN is required</mat-error>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Phone Number</mat-label>
+                <input formControlName="phoneNumber" matInput placeholder="Phone Number">
+            </mat-form-field>
+            <mat-error *ngIf="hasError('phoneNumber', 'required')">Phone number is required</mat-error>
+            <mat-error *ngIf="hasError('phoneNumber', 'pattern')">Should be 10 digit number</mat-error>
+        </div>
+
+        <div class="col-md-3" style="margin-top: 25px;">
+            <mat-slide-toggle formControlName="phoneLinkedToAadhaar"  [disabled]="false">
+                Aadhaar Linked
+            </mat-slide-toggle>
+            <mat-error *ngIf="hasError('phoneLinkedToAadhaar', 'required')">phoneLinkedToAadhaar is required</mat-error>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Email</mat-label>
+                <input formControlName="emailId" matInput placeholder="Email">
+            </mat-form-field>
+            <mat-error *ngIf="hasError('emailId', 'required')">EmailId is required</mat-error>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Patient Id</mat-label>
+                <input formControlName="patientId" matInput placeholder="Pantient Id">
+            </mat-form-field>
+            <mat-error *ngIf="hasError('patientId', 'required')">PatientId is required</mat-error>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Relationship w/Patient</mat-label>
+                <input formControlName="relationshipWithPatient" matInput placeholder="Relationship w/Patient">
+            </mat-form-field>
+            <mat-error *ngIf="hasError('relationshipWithPatient', 'required')">Relationship with patient is required</mat-error>
+        </div>
+    </div>
+
+    <!--
+    <div class="row" style="margin-top:20px">
+        <div class="offset-md-4 col-sm-1">
+            <button (click)="back()" mat-raised-button color="primary">Back</button>
+        </div>
+        <div class="offset-md-1 col-sm-1">
+            <button (click)="next()" mat-raised-button color="primary">Next</button>
+        </div>
+    </div>
+    -->
+</form>
