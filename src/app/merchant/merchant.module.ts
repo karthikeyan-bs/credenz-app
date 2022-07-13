@@ -5,7 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { CoreModule } from '../core/core.module';
-import { MaterialModule } from '../material.module';
+import { LmsModule } from '../lms/lms.module';
+import { AppMaterialModule } from '../app-material.module';
 import { ApplicationWizardComponent } from './application/application-wizard/application-wizard.component';
 import { NewApplicationComponent } from './application/application-wizard/new-application.component';
 import { EmploymentDetailsComponent } from './application/employment-details/employment-details.component';
@@ -15,7 +16,7 @@ import { CustomerEffects } from './application/store/customer.effects';
 import { customerReducer } from './application/store/customer.reducer';
 import { VerifyPhoneComponent } from './application/verify-phone.component';
 import { MerchantRoutingModule } from './merchant-routing.module';
-import { ExecutionServiceApiService } from './service/execution-service-api.service';
+import { LmsApiService } from './service/lms-api.service';
 
 /*
 export const featureReducersMap: ActionReducerMap<IState<any>> = {
@@ -31,15 +32,15 @@ export const featureReducersMap: ActionReducerMap<IState<any>> = {
     FormsModule,
     ReactiveFormsModule,
     MerchantRoutingModule,
-    MaterialModule,
+    AppMaterialModule,
     HttpClientModule,
     CoreModule,
-
+    LmsModule,
     StoreModule.forFeature("customer", customerReducer),
     EffectsModule.forFeature([CustomerEffects])
   ],
   providers: [
-    ExecutionServiceApiService
+    LmsApiService
   ]
 
 })

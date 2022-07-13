@@ -1,0 +1,59 @@
+<h6>Search Applications</h6>
+<mat-divider></mat-divider>
+
+<form [formGroup]="searchApplicationForm" class="form-container" autocomplete="off">
+    <div class="row">
+
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Customer Phone Number</mat-label>
+                <input formControlName="custPhoneNumber" matInput placeholder="Customer Phone Number">
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Patient Id</mat-label>
+                <input formControlName="patientId" matInput placeholder="Pantient Id">
+            </mat-form-field>
+        </div>
+        
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>First Name</mat-label>
+                <input formControlName="custFirstName" matInput placeholder="Customer First name">
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Last name</mat-label>
+                <input formControlName="custLastName" matInput placeholder="Customer Last name">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Application#</mat-label>
+                <input formControlName="applicationId" matInput placeholder="Application#">
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Aadhaar Number</mat-label>
+                <input formControlName="aadhaarNumber" matInput placeholder="Aadhaar Number">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:20px">
+        <div class="offset-md-4 col-sm-1">
+            <button (click)="searchApplications()" mat-raised-button color="primary">Search</button>
+        </div>
+        
+    </div>
+</form>

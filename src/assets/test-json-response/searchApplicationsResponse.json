@@ -1,0 +1,49 @@
+[
+    {
+      "applicationId": 3,
+      "loanApplication": {
+        "id": "62ceb32580be597623933b22",
+        "appDate": "2022-07-13T17:27:24.998",
+        "applicationId": 3,
+        "customerId": 7,
+        "ekycResponse": {
+          "uuid": 101,
+          "data": null
+        },
+        "milestoneStatus": "EKYC_RESPONSE_PENDING",
+        "status": "PENDING",
+        "ekycStatus": null
+      },
+      "customer": {
+        "id": "62ceb21c80be597623933b21",
+        "customerId": 7,
+        "name": {
+          "firstName": "Sundar",
+          "lastName": "Bellapu"
+        },
+        "dateOfBirth": "1995-07-13 11:49:44",
+        "gender": "MALE",
+        "address": {
+          "addressLine1": "test address line-1",
+          "addressLine2": "address Line2",
+          "city": "Chennai",
+          "state": "Tamilnadu",
+          "pincode": "123456"
+        },
+        "identificationDetails": {
+          "emailId": "test-5@test.com",
+          "aadhaarNumber": "8329872497343",
+          "panNumber": "ABCDEFG",
+          "phoneNumber": "8939706432",
+          "phoneLinkedToAadhaar": true,
+          "patientId": "PAT-004",
+          "relationshipWithPatient": "GEE"
+        },
+        "employmentDetails": {
+          "occupation": "SE",
+          "monthlyIncome": 100,
+          "monthlyExpenses": 50
+        }
+      }
+    }
+  ]

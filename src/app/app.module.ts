@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MaterialModule } from './material.module';
+import { AppMaterialModule } from './app-material.module';
 
 import { MerchantModule } from './merchant/merchant.module';
 
@@ -15,6 +15,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { CoreModule } from './core/core.module';
+import { LmsModule } from './lms/lms.module';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,10 @@ import { EffectsModule } from '@ngrx/effects';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule,
+    AppMaterialModule,
+    CoreModule,
+    LmsModule,
     MerchantModule,
-
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
 

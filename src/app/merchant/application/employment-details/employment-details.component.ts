@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from '../models/customer-models';
 
 export class User {
@@ -44,8 +44,8 @@ export class EmploymentDetailsComponent {
         console.log('form data is ', this.employmentDetailsForm.value);
     }
 
-    setCustomer(customer : Customer) {
-
+    setCustomer(customer: Customer) {
+        this.customer = customer;
     }
 
 }

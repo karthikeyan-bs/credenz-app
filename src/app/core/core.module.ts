@@ -2,8 +2,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from '../material.module';
+import { AppMaterialModule } from '../app-material.module';
 import { SpinnerService } from './service/spinner-service.service';
+import { SnackBarService } from './service/snackbar-service.service';
 
 @NgModule({
   declarations: [],
@@ -11,11 +12,12 @@ import { SpinnerService } from './service/spinner-service.service';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule,
+    AppMaterialModule,
     HttpClientModule,
   ],
   providers: [
-    SpinnerService
+    SpinnerService,
+    SnackBarService
   ]
 
 })

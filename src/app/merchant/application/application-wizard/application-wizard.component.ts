@@ -1,5 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { catchError, of } from 'rxjs';
+import { SnackBarService } from 'src/app/core/service/snackbar-service.service';
+import { LmsApiService } from '../../service/lms-api.service';
 import { EmploymentDetailsComponent } from '../employment-details/employment-details.component';
 import { IdentificationDetailsComponent } from '../identification-details/identification-details.component';
 import { Customer } from '../models/customer-models';
@@ -18,7 +21,7 @@ export class ApplicationWizardComponent implements OnInit, AfterViewInit {
 
   customer: Customer;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder, private executionServiceApi: LmsApiService, private snackBarService: SnackBarService) { }
 
   ngOnInit() {
     let tempCustomer: Customer = Object.assign(
@@ -58,7 +61,7 @@ export class ApplicationWizardComponent implements OnInit, AfterViewInit {
     this.personalDetailsComponent.setCustomer(this.customer);
     this.identificationDetailsComponent.setCustomer(this.customer);
     this.employmentDetailsComponent.setCustomer(this.customer);
-  }  
+  }
 
   get personalDetailsStep() {
     return this.personalDetailsComponent ? this.personalDetailsComponent.customerForm : null;
@@ -70,6 +73,20 @@ export class ApplicationWizardComponent implements OnInit, AfterViewInit {
 
   get employmentDetailsStep() {
     return this.employmentDetailsComponent ? this.employmentDetailsComponent.employmentDetailsForm : null;
+  }
+
+  registerCustomer() {
+    let registeredCustomer$ = this.executionServiceApi.registerCustomer(this.customer);
+
+    registeredCustomer$.pipe(
+      catchError(error => {
+        console.log(error);
+        return of([]);
+      })
+    ).subscribe((data) => {
+      console.log(data);
+      this.snackBarService.openSnackBar("Registered new customer !", "Close");
+    })
   }
 
 }

@@ -1,0 +1,13 @@
+{
+    "id": "62ceb32580be597623933b22",
+    "appDate": "2022-07-13T17:27:24.998",
+    "applicationId": 3,
+    "customerId": 7,
+    "ekycResponse": {
+      "uuid": 101,
+      "data": null
+    },
+    "milestoneStatus": "EKYC_RESPONSE_PENDING",
+    "status": "PENDING",
+    "ekycStatus": null
+  }

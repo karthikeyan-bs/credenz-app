@@ -28,7 +28,7 @@ export class PersonalDetailsComponent implements OnInit {
     form: FormGroup;
 
     constructor(private formBuilder: FormBuilder, private router: Router, private activatedRoute: ActivatedRoute, private customerStore: Store<CustomerState>) { }
-    
+
     ngOnInit(): void {
         this.customerForm.patchValue(this.customer);
     }
@@ -60,7 +60,7 @@ export class PersonalDetailsComponent implements OnInit {
 
     next() {
         this.customer = Object.assign(this.customer, this.customerForm.value);
-        this.customerStore.dispatch(CustomerActions.saveCustomer({customer : this.customer}))
+        this.customerStore.dispatch(CustomerActions.saveCustomer({ customer: this.customer }))
         this.router.navigate(['identificationDetails'], { relativeTo: this.activatedRoute.parent });
     }
 
@@ -69,8 +69,8 @@ export class PersonalDetailsComponent implements OnInit {
         return control.touched && control.invalid && control.hasError(errorName);
     }
 
-    setCustomer(customer : Customer) {
-
+    setCustomer(customer: Customer) {
+        this.customer = customer;
     }
 
 }

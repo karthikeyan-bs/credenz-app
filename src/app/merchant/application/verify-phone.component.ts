@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ExecutionServiceApiService } from '../service/execution-service-api.service';
+import { LmsApiService } from '../service/lms-api.service';
 import { catchError, of } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { CustomerState } from './store/customer.state';
@@ -20,7 +20,7 @@ export class User {
 })
 export class VerifyPhoneComponent {
 
-    constructor(private formBuilder: FormBuilder, private executionServiceApi: ExecutionServiceApiService,
+    constructor(private formBuilder: FormBuilder, private executionServiceApi: LmsApiService,
         private router: Router, private activatedRoute: ActivatedRoute, private customerStore$: Store<CustomerState>) { }
 
     otpSent: boolean = false;

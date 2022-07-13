@@ -1,0 +1,31 @@
+{
+    "id": "62b9d92ab5678c297af568ae",
+    "customerId": 5,
+    "name": {
+      "firstName": "test-first-1",
+      "lastName": "test-last-1"
+    },
+    "dateOfBirth": "2022-06-27 16:20:47",
+    "gender": "MALE",
+    "address": {
+      "addressLine1": "string",
+      "addressLine2": "string",
+      "city": "string",
+      "state": "string",
+      "pincode": "string"
+    },
+    "identificationDetails": {
+      "emailId": "string",
+      "aadhaarNumber": "string",
+      "panNumber": "string",
+      "phoneNumber": "8939706432",
+      "phoneLinkedToAadhaar": true,
+      "patientId": "PAT-001",
+      "relationshipWithPatient": "string"
+    },
+    "employmentDetails": {
+      "occupation": "string",
+      "monthlyIncome": 0,
+      "monthlyExpenses": 0
+    }
+  }

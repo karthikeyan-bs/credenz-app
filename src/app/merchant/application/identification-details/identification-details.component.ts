@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Customer, IdentificationDetails } from '../models/customer-models';
-import { CustomerActions, CustomerSelectors } from '../store';
 import { CustomerState } from '../store/customer.state';
 
 export class User {
@@ -58,7 +57,7 @@ export class IdentificationDetailsComponent {
     }
 
     setCustomer(customer: Customer) {
-
+        this.customer = customer;
     }
 
 }

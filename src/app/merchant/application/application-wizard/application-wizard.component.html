@@ -37,7 +37,7 @@
                             <employment-details [customer]="customer"></employment-details>
                             <div>
                                 <button mat-flat-button color="primary" matStepperPrevious>Back</button>&nbsp;&nbsp;
-                                <button mat-flat-button color="primary" matStepperNext>Next</button>
+                                <button mat-flat-button color="primary" matStepperNext (click)="registerCustomer()">Submit</button>
                             </div>
 
                         </mat-step>
